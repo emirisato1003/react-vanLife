@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import Home from './pages/Home';
 import About from './pages/About';
+import "./server"
 import './App.css';
 
 
@@ -29,7 +30,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <footer>
-        <FaRegCopyright className='footer-icon'/>&nbsp;
+        <FaRegCopyright className='footer-icon' />&nbsp;
         2025 #VANLIFE
       </footer>
     </>
