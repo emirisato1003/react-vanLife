@@ -4,7 +4,8 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import Home from './pages/Home';
 import About from './pages/About';
-import "./server"
+import Vans from './pages/Vans';
+import "./server";
 import './App.css';
 
 
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/vans' element={<Vans />} />
         </Routes>
       </BrowserRouter>
       <footer>
