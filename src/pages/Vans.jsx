@@ -26,16 +26,18 @@ export default function Vans() {
 
     return (
         <div className="vans">
-            {vans.map(van => (
-                <div key={van.id} className="vans-card">
+            {vans.map(van => {
+                const badgeClasses = clsx('vans-card-badge', van.type)
+                return (<div key={van.id} className="vans-card">
                     <img src={van.imageUrl} alt={van.name} />
                     <div className="vans-card-details">
                         <div>{van.name}</div>
                         <div>${van.price}<div className="day">/day</div></div>
                     </div>
-                    <span className="vans-card-badge">{van.type}</span>
-                </div>
-            ))}
+                    <span className={badgeClasses}>{van.type}</span>
+                </div>)
+            }
+            )}
         </div>
     );
 }
