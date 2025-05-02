@@ -158,6 +158,39 @@ footer{
 }
 
 
+/***Vans page***/
+.vans{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 33px;
+  margin-bottom: 80px;
+}
+
+.vans img{
+  width: 230px;
+  border-radius: 5px;
+}
+
+.vans-card-details{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.day{
+  font-size: .875rem;
+}
+
+.vans-card-badge{
+  color: #ffcc8d;
+  background-color: #e17654;
+  border-radius: 5px;
+  padding: 2px 13px;
+}
+
 @media (max-width: 650px) {
   .hero{
     padding: 66px 26px;
