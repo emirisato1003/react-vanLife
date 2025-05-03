@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg';
 import Home from './pages/Home';
 import About from './pages/About';
 import Vans from './pages/Vans';
+import VanDetail from './pages/vanDetail';
 import "./server";
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/vans' element={<Vans />} />
+          <Route path='/vans/:id' element={<VanDetail />} />
         </Routes>
       </BrowserRouter>
       <footer>

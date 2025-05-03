@@ -173,7 +173,7 @@ footer{
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 34px;
-  margin-top: 57px;
+  margin-block: 57px;
 }
 
 .van-tile a{
@@ -199,7 +199,7 @@ footer{
   border: none;
   border-radius: 5px;
   background-color: #FFEAD0;
-  color: #4D4D4D;
+  color: #dfd1d1;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -274,7 +274,7 @@ i[class*='van-type-'] {
   color: #FFEAD0;
 } */
 
-.simple{
+/* .simple{
   background-color: #E17654;
 }
 
@@ -284,7 +284,7 @@ i[class*='van-type-'] {
 
 .luxury{
   background-color: #161616;
-}
+} */
 
 @media (max-width: 650px) {
   .hero{

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { HiH1 } from "react-icons/hi2";
-import clsx from "clsx";
 
 export default function Vans() {
     const [vans, setVans] = useState([]);
@@ -23,14 +23,16 @@ export default function Vans() {
     }, []);
 
     const vanElements = vans.map(van => (
-        <div key={van.id} className="vans-tile">
-            <img src={van.imageUrl} alt={van.name} />
-            <div className="van-info">
-                <h3>{van.name}</h3>
-                <p>${van.price}<span>/day</span></p>
+        <Link key={van.id} to={`/vans/${van.id}`}>
+            <div key={van.id} className="van-tile">
+                <img src={van.imageUrl} alt={van.name} />
+                <div className="van-info">
+                    <h3>{van.name}</h3>
+                    <p>${van.price}<span>/day</span></p>
+                </div>
+                <i className={`van-type ${van.type} selected`}>{van.type}</i>
             </div>
-            <i className={`van-type ${van.type} selected`}>{van.type}</i>
-        </div>
+        </Link>
     )
     );
 
