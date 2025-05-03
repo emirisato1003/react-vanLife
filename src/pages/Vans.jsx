@@ -16,28 +16,30 @@ export default function Vans() {
                 const vansData = await res.json();
                 setVans(vansData.vans);
                 console.log(vansData.vans);
-                // .then(res => res.json())
-                // .then(data => setVans(data));
             } catch (err) {
                 console.log(err.message);
             }
         })();
     }, []);
 
+    const vanElements = vans.map(van => (
+        <div key={van.id} className="vans-tile">
+            <img src={van.imageUrl} alt={van.name} />
+            <div className="van-info">
+                <h3>{van.name}</h3>
+                <p>${van.price}<span>/day</span></p>
+            </div>
+            <i className={`van-type ${van.type} selected`}>{van.type}</i>
+        </div>
+    )
+    );
+
     return (
-        <div className="vans">
-            {vans.map(van => {
-                const badgeClasses = clsx('vans-card-badge', van.type)
-                return (<div key={van.id} className="vans-card">
-                    <img src={van.imageUrl} alt={van.name} />
-                    <div className="vans-card-details">
-                        <div>{van.name}</div>
-                        <div>${van.price}<div className="day">/day</div></div>
-                    </div>
-                    <span className={badgeClasses}>{van.type}</span>
-                </div>)
-            }
-            )}
+        <div className="van-list-container">
+            <h1>Explore out van options</h1>
+            <div className="van-list">
+                {vanElements}
+            </div>
         </div>
     );
 }
