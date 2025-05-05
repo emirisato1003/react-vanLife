@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom";
 
-export default function VanDetail(){
-    return(
+export default function VanDetail() {
+    const params = useParams();
+    console.log(params);
+    return (
         <h1>Van detail here</h1>
-    )
+    );
 }
