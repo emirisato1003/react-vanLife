@@ -243,48 +243,30 @@ footer{
 i[class*='van-type-'] {
   padding: 7px 14px;
 }
-/* .vans{
+
+/*** van detail page ***/
+.van-detail-container{
+  padding: 27px;
+}
+
+.van-detail-container .back-button:visited {
+    
+}
+
+.van-detail-container .back-button span {
+    text-decoration: underline;
+}
+
+.van-detail{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 33px;
-  margin-bottom: 80px;
+  flex-direction: column;
 }
 
-.vans img{
-  width: 230px;
+.van-detail img{
   border-radius: 5px;
+  margin-block: 47px;
+  max-width: 1200px;
 }
-
-.vans-card-details{
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.day{
-  font-size: .875rem;
-}
-
-.vans-card-badge{
-  border-radius: 5px;
-  padding: 2px 13px;
-  color: #FFEAD0;
-} */
-
-/* .simple{
-  background-color: #E17654;
-}
-
-.rugged{
-  background-color: #115E59;
-}
-
-.luxury{
-  background-color: #161616;
-} */
 
 @media (max-width: 650px) {
   .hero{
