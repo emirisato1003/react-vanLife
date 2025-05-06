@@ -247,6 +247,8 @@ i[class*='van-type-'] {
 /*** van detail page ***/
 .van-detail-container{
   padding: 27px;
+  max-width: 900px;
+  justify-self: center;
 }
 
 .van-detail-container .back-button:visited {
@@ -262,10 +264,32 @@ i[class*='van-type-'] {
   flex-direction: column;
 }
 
+.van-detail i{
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.van-detail h2{
+  font-size: 2rem;
+}
+
+.van-price{
+  font-size: 1.75rem;
+  margin: 0;
+}
 .van-detail img{
   border-radius: 5px;
   margin-block: 47px;
   max-width: 1200px;
+}
+
+.link-button{
+  background-color: #ff8c38;
+  color: #fff;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 @media (max-width: 650px) {
