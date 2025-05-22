@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import Home from './pages/Home';
-import About from './pages/About';
-import Vans from './pages/Vans';
-import VanDetail from './pages/vanDetail';
+// import Home from './pages/Home';
+// import About from './pages/About';
+// import Vans from './pages/Vans';
+// import VanDetail from './pages/vanDetail';
+import Layout from './components/Layout';
 import "./server";
 import './App.css';
-
 
 import { FaRegCopyright } from "react-icons/fa";
 function App() {
@@ -16,23 +14,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <nav>
-          <div className="nav-logo">
-            <Link to='/'>#VANLIFE</Link>
-          </div>
-          <div className="nav-link">
-            <Link to='/about'>About</Link>
-            <Link to='/vans'>Vans</Link>
-          </div>
-        </nav>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/vans' element={<Vans />} />
-          <Route path='/vans/:id' element={<VanDetail />} />
-        </Routes>
-      </BrowserRouter>
+      <Layout />
       <footer>
         <FaRegCopyright className='footer-icon' />&nbsp;
         2025 #VANLIFE
