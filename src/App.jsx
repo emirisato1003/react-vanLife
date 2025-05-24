@@ -14,7 +14,15 @@ function App() {
 
   return (
     <>
-      <Layout />
+      <BrowserRouter>
+        {/* <Header>{children}</Header> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VanDetail />} />
+        </Routes>
+      </BrowserRouter>
       <footer>
         <FaRegCopyright className='footer-icon' />&nbsp;
         2025 #VANLIFE

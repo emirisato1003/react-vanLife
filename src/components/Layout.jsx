@@ -7,14 +7,6 @@ import Header from './Header';
 
 export default function Layout({ children }) {
     return (
-        <BrowserRouter>
-            <Header>{children}</Header>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/vans" element={<Vans />} />
-                <Route path="/vans/:id" element={<VanDetail />} />
-            </Routes>
-        </BrowserRouter>
+        pass
     );
 }
