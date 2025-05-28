@@ -1,0 +1,39 @@
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 44px 16px;
+}
+
+header a{
+    text-decoration: none;
+    text-underline-offset: .3em;
+
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+nav{
+    display: flex;
+    gap: 16px;
+}
+
+nav a{
+    text-decoration: none;
+    color: gray;
+    font-weight: 600;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo a{
+    padding-left: 15px;
+    font-weight: 500;
+}
