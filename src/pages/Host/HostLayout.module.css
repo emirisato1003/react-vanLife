@@ -1,0 +1,11 @@
+
+.hostNav{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.hostNavList a:focus{
+    font-weight: 700;
+    color: black;
+}
