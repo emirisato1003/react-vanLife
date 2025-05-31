@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import styles from '../Host/HostLayout.module.css'
+import styles from '../components/HostLayout.module.css'
 export default function HostLayout() {
     return (
         <>
