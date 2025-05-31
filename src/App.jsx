@@ -10,9 +10,8 @@ import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import "./server";
 import './App.css';
-
-import { FaRegCopyright } from "react-icons/fa";
 import HostLayout from './components/HostLayout';
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -33,10 +32,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <footer>
-        <FaRegCopyright className='footer-icon' />&nbsp;
-        2025 #VANLIFE
-      </footer>
     </>
   );
 }
