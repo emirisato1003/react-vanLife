@@ -12,10 +12,6 @@ header a{
 
 }
 
-header a:hover{
-    text-decoration: underline;
-}
-
 nav{
     display: flex;
     gap: 16px;
@@ -32,4 +28,10 @@ nav a{
     font-weight: 800;
     text-transform: uppercase;
     color: black;
+}
+
+.active{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
 }

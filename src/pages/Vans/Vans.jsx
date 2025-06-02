@@ -9,13 +9,12 @@ export default function Vans() {
         (async () => {
             try {
                 const res = await fetch("/api/vans");
-                console.log(res.status);
+                console.log(res.headers);
                 if (!res.ok) {
                     throw new Error(res.status);
                 }
                 const vansData = await res.json();
                 setVans(vansData.vans);
-                console.log(vansData.vans);
             } catch (err) {
                 console.log(err.message);
             }
