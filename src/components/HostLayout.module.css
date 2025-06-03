@@ -1,5 +1,6 @@
 
 .hostNav{
+    margin-left: 1em;
     display: flex;
     list-style-type: none;
     gap: 10px;
