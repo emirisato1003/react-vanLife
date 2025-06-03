@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { HiH1 } from "react-icons/hi2";
 
 export default function Vans() {
     const [vans, setVans] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const typeFilter = searchParams.get("type");
+    const displayVans = typeFilter
+        ? vans.filter(({ type }) => type === typeFilter)
+        : vans;
 
     useEffect(() => {
         (async () => {
@@ -21,7 +26,7 @@ export default function Vans() {
         })();
     }, []);
 
-    const vanElements = vans.map(van => (
+    const vanElements = displayVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link key={van.id} to={`/vans/${van.id}`}>
                 <img src={van.imageUrl} alt={van.name} />
@@ -38,6 +43,10 @@ export default function Vans() {
     return (
         <div className="van-list-container">
             <h1>Explore out van options</h1>
+            <button style={{color:'#161616'}} onClick={() => setSearchParams({type: 'simple'})} className="van-type simple">simple</button>
+            <button style={{color:'#E17654'}} onClick={() => setSearchParams({type: 'luxury'})} className="van-type luxury">luxury</button>
+            <button style={{color:'darkgray'}} onClick={() => setSearchParams({type: 'rugged'})}className="van-type rugged">rugged</button>
+            <button onClick={() => setSearchParams({})}>Clear Filter</button>
             <div className="van-list">
                 {vanElements}
             </div>
