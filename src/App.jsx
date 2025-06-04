@@ -11,6 +11,8 @@ import Reviews from './pages/Host/Reviews';
 import "./server";
 import './App.css';
 import HostLayout from './components/HostLayout';
+import HostVans from './pages/Host/HostVans';
+import HostVansDetail from './pages/Host/HostVansDetail';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,9 +26,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/vans" element={<Vans />} />
             <Route path="/vans/:id" element={<VanDetail />} />
+
             <Route path='/host' element={<HostLayout />}>
               <Route index element={<Dashboard />} />
               <Route path='income' element={<Income />} />
+              <Route path='/host/vans' element={<HostVans />} />
+              <Route path='/host/vans/:id' element={<HostVansDetail />} />
               <Route path='reviews' element={<Reviews />} />
             </Route>
           </Route>
