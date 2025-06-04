@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { HiH1, HiH2 } from 'react-icons/hi2';
 import { Link, useParams } from 'react-router-dom';
 
 import styles from './HostVanDetail.module.css';
@@ -25,7 +24,7 @@ export default function HostVansDetail() {
     }, []);
     return (
         <div>
-            <Link to='/host/vans'> Back to all vans</Link>
+            <Link to='..' relative='path' className={styles.backButton}>&larr; <span>Back to all vans</span></Link>
             {hostVansDetail ?
                 <div className={styles.vanDetailContainer}>
                     <div className={styles.vanDetailHeader}>
@@ -33,7 +32,7 @@ export default function HostVansDetail() {
                         <div className={styles.vanInfo}>
                             <span className={`van-type ${hostVansDetail.type} selected`} >{hostVansDetail.type}</span>
                             <h2>{hostVansDetail.name}</h2>
-                            <h3>${hostVansDetail.price} <span style={{fontWeight: '400'}}>/day</span></h3>
+                            <h3>${hostVansDetail.price} <span style={{ fontWeight: '400' }}>/day</span></h3>
                         </div>
                     </div>
                     {/* another nested route comes here */}

@@ -1,4 +1,15 @@
 
+.backButton{
+    margin-left:2em;
+    text-decoration: none;
+    color: #161616;
+}
+
+.backButton span:hover{
+    text-decoration: underline;
+}
+
+
 .vanDetailContainer{
     margin: 2em;
     background-color: white;
@@ -12,6 +23,7 @@
 .vanDetailHeader img{
     height: 350px;
     padding: 2em;
+    border-radius: 10px;
 }
 
 .vanInfo h2, h3{
