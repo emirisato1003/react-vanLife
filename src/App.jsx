@@ -12,7 +12,7 @@ import "./server";
 import './App.css';
 import HostLayout from './components/HostLayout';
 import HostVans from './pages/Host/HostVans';
-import HostVansDetail from './pages/Host/HostVansDetail';
+import HostVansDetail from './pages/Host/HostVanDetail';
 
 function App() {
   const [count, setCount] = useState(0);

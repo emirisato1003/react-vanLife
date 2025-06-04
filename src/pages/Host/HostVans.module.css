@@ -1,0 +1,49 @@
+
+h1{
+    margin-left: 1em;
+}
+.vansList {
+    margin: 32px 28px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vansList:hover{
+    -webkit-box-shadow: 5px 5px 14px -4px rgba(0,0,0,0.64); 
+    box-shadow: 5px 5px 14px -4px rgba(0,0,0,0.64);
+}
+
+.vansList img{
+    padding:18px 24px;
+    height: 250px;
+}
+
+.vansList h2{
+    color: #161616;
+    font-weight: 500;
+    margin-inline: 0;
+}
+
+.vansList p{
+    margin: 0;
+    color: #4D4D4D;
+}
+
+@media screen and (max-width: 600px) {
+    .vansList h2{
+    margin: 0;
+}
+    .vansList img{
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 480px ){
+    .vansList img{
+        height: 50px;
+    }
+}
