@@ -31,7 +31,7 @@ export default function HostVansDetail() {
                     <div className={styles.vanDetailHeader}>
                         <img src={hostVansDetail.imageUrl} alt={hostVansDetail.name} />
                         <div className={styles.vanInfo}>
-                            <span className='van-type rugged selected' >{hostVansDetail.type}</span>
+                            <span className={`van-type ${hostVansDetail.type} selected`} >{hostVansDetail.type}</span>
                             <h2>{hostVansDetail.name}</h2>
                             <h3>${hostVansDetail.price} <span style={{fontWeight: '400'}}>/day</span></h3>
                         </div>
