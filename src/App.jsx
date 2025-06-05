@@ -12,7 +12,10 @@ import "./server";
 import './App.css';
 import HostLayout from './components/HostLayout';
 import HostVans from './pages/Host/HostVans';
-import HostVansDetail from './pages/Host/HostVanDetail';
+import HostVanDetail from './pages/Host/HostVanDetail';
+import HostVanInfo from './pages/Host/HostVanInfo';
+import HostVanPricing from './pages/Host/HostVanPricing';
+import HostVanPhoto from './pages/Host/HostVanPhoto';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +34,13 @@ function App() {
               <Route index element={<Dashboard />} />
               <Route path='income' element={<Income />} />
               <Route path='/host/vans' element={<HostVans />} />
-              <Route path='/host/vans/:id' element={<HostVansDetail />} />
+
+              <Route path='vans/:id' element={<HostVanDetail />}>
+                <Route index element={<HostVanInfo />} />
+                <Route path='pricing' element={<HostVanPricing />} />
+                <Route path='photo' element={<HostVanPhoto />} />
+              </Route>
+
               <Route path='reviews' element={<Reviews />} />
             </Route>
           </Route>

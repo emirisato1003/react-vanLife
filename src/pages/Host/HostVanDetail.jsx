@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, NavLink } from 'react-router-dom';
 
 import styles from './HostVanDetail.module.css';
 
-export default function HostVansDetail() {
+export default function HostVanDetail() {
     const [hostVansDetail, setHostVansDetail] = useState(null);
     const { id } = useParams();
 
@@ -35,7 +35,10 @@ export default function HostVansDetail() {
                             <h3>${hostVansDetail.price} <span style={{ fontWeight: '400' }}>/day</span></h3>
                         </div>
                     </div>
-                    {/* another nested route comes here */}
+                    <NavLink to=".">Details</NavLink>
+                    <NavLink to="pricing">Pricing</NavLink>
+                    <NavLink to="photo">Photos</NavLink>
+                    <Outlet />
                 </div>
                 : <h2>Loading...</h2>}
         </div>
