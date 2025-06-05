@@ -6,7 +6,10 @@ import styles from './HostVanDetail.module.css';
 export default function HostVanDetail() {
     const [hostVansDetail, setHostVansDetail] = useState(null);
     const { id } = useParams();
-
+    const navActive = {
+        color: '#161616',
+        textDecoration: 'underline'
+    };
     const HostVansFetch = async () => {
         try {
             const res = await fetch(`/api/host/vans/${id}`);
@@ -35,9 +38,11 @@ export default function HostVanDetail() {
                             <h3>${hostVansDetail.price} <span style={{ fontWeight: '400' }}>/day</span></h3>
                         </div>
                     </div>
-                    <NavLink to=".">Details</NavLink>
-                    <NavLink to="pricing">Pricing</NavLink>
-                    <NavLink to="photo">Photos</NavLink>
+                    <nav className={styles.detailsNav}>
+                        <NavLink style={({ isActive }) => isActive ? navActive : null} to="." end>Details</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? navActive : null} to="pricing">Pricing</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? navActive : null} to="photo">Photos</NavLink>
+                    </nav>
                     <Outlet />
                 </div>
                 : <h2>Loading...</h2>}

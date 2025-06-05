@@ -31,6 +31,10 @@
     padding: 0;
 }
 
+.detailsNav{
+    margin-left: 1em;
+}
+
 @media screen and (max-width: 600px) {
     .vanDetailHeader img{
         height: 250px;
