@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { HiH1 } from "react-icons/hi2";
 
 export default function Vans() {
     const [vans, setVans] = useState([]);
@@ -28,7 +27,7 @@ export default function Vans() {
 
     const vanElements = displayVans.map(van => (
         <div key={van.id} className="van-tile">
-            <Link key={van.id} to={`/vans/${van.id}`}>
+            <Link key={van.id} to={van.id}>
                 <img src={van.imageUrl} alt={van.name} />
                 <div className="van-info">
                     <h3>{van.name}</h3>
