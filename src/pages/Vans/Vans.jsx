@@ -39,17 +39,26 @@ export default function Vans() {
         </div>
     )
     );
-
+    const handleFilter = (key, value) => {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key);
+            } else {
+                prevParams.set(key, value);
+            }
+            console.log(prevParams);
+        });
+    };
     return (
         <div className="van-list-container">
             <h1>Explore out van options</h1>
-            <button style={{color:'#161616'}} onClick={() => setSearchParams({type: 'simple'})} className="van-type simple">simple</button>
-            <button style={{color:'#E17654'}} onClick={() => setSearchParams({type: 'luxury'})} className="van-type luxury">luxury</button>
-            <button style={{color:'darkgray'}} onClick={() => setSearchParams({type: 'rugged'})}className="van-type rugged">rugged</button>
-            <button onClick={() => setSearchParams({})}>Clear Filter</button>
+            <button style={{ color: '#161616' }} onClick={() => handleFilter('type', 'simple')} className={`van-type simple ${typeFilter === 'simple' ? 'selected' : null}`}>simple</button>
+            <button style={{ color: '#E17654' }} onClick={() => handleFilter('type', 'luxury')} className={`van-type luxury ${typeFilter === 'luxury' ? 'selected' : null}`} > luxury</button >
+            <button style={{ color: 'darkgray' }} onClick={() => handleFilter('type', 'rugged')} className={`van-type rugged ${typeFilter === 'rugged' ? 'selected' : null}`} > rugged</button >
+            {typeFilter && <button onClick={() => handleFilter('type', null)}>Clear Filter</button>}
             <div className="van-list">
                 {vanElements}
             </div>
-        </div>
+        </div >
     );
 }
