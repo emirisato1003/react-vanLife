@@ -5,15 +5,11 @@ export default function Vans() {
     const [vans, setVans] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
-    const displayVans = typeFilter
-        ? vans.filter(({ type }) => type === typeFilter)
-        : vans;
 
     useEffect(() => {
         (async () => {
             try {
                 const res = await fetch("/api/vans");
-                console.log(res.headers);
                 if (!res.ok) {
                     throw new Error(res.status);
                 }
@@ -25,9 +21,13 @@ export default function Vans() {
         })();
     }, []);
 
+    const displayVans = typeFilter
+        ? vans.filter(({ type }) => type === typeFilter)
+        : vans;
+
     const vanElements = displayVans.map(van => (
         <div key={van.id} className="van-tile">
-            <Link key={van.id} to={van.id}>
+            <Link key={van.id} to={van.id} state={{ search: `?${searchParams.toString()}` }}>
                 <img src={van.imageUrl} alt={van.name} />
                 <div className="van-info">
                     <h3>{van.name}</h3>
@@ -45,7 +45,7 @@ export default function Vans() {
             } else {
                 prevParams.set(key, value);
             }
-            console.log(prevParams);
+            return prevParams;
         });
     };
     return (

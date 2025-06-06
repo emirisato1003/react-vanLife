@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams, Link } from "react-router-dom";
 
 export default function VanDetail() {
     const [vanDetail, setVanDetail] = useState(null);
-    const params = useParams();
+    const { id } = useParams();
+    const location = useLocation();
+    const search = location.state?.search || "";
 
     useEffect(() => {
         (async () => {
             try {
-                const res = await fetch(`/api/vans/${params.id}`);
+                const res = await fetch(`/api/vans/${id}`);
                 if (!res.status) {
                     throw new Error(res.status);
                 }
@@ -18,9 +20,14 @@ export default function VanDetail() {
                 console.log(err.message);
             }
         })();
-    }, [params.id]); // ensure it fetches data whenever the ID changes
+    }, [id]); // ensure it fetches data whenever the ID changes
     return (
         <div className="van-detail-container">
+            <Link
+                to={`..${search}`}
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to all vans</span></Link>
             {vanDetail ? (
                 <div className="van-detail">
                     <img src={vanDetail.imageUrl} />

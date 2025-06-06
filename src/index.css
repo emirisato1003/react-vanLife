@@ -219,7 +219,7 @@ i[class*='van-type-'] {
 /*** van detail page ***/
 .van-detail-container{
   padding: 27px;
-  max-width: 900px;
+  /* max-width: 900px; */
   justify-self: center;
 }
 
@@ -233,6 +233,7 @@ i[class*='van-type-'] {
 
 .van-detail{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 
@@ -264,10 +265,14 @@ i[class*='van-type-'] {
   cursor: pointer;
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 600px) {
   .hero{
     padding: 66px 26px;
   }
+
+  .van-detail img{
+  width: auto;
+}
 
   .hero h1{
     font-size:2.25rem;
@@ -283,6 +288,10 @@ i[class*='van-type-'] {
   .container{
     padding: 150px 0;
     max-width: 560px;
+  }
+
+  .van-detail img{
+  max-width: 700px;
   }
 
   .about-hero-image{
