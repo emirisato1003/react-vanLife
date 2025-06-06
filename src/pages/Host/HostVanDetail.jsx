@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useParams, NavLink, useOutletContext } from 'react-router-dom';
+import { Link, Outlet, useParams, NavLink } from 'react-router-dom';
 
 import styles from './HostVanDetail.module.css';
 
@@ -43,7 +43,7 @@ export default function HostVanDetail() {
                         <NavLink style={({ isActive }) => isActive ? navActive : null} to="pricing">Pricing</NavLink>
                         <NavLink style={({ isActive }) => isActive ? navActive : null} to="photo">Photos</NavLink>
                     </nav>
-                    <Outlet context={hostVansDetail} />
+                    <Outlet context={{hostVansDetail}} />
                 </div>
                 : <h2>Loading...</h2>}
         </div>

@@ -35,6 +35,31 @@
     margin-left: 1em;
 }
 
+.hostVanDetailInfo{
+    padding: 1em;
+    font-size: .9rem;
+}
+
+.hostVanPrice{
+    font-size: 1.3rem;
+    padding: 1em;
+    font-weight: 500;
+}
+
+.hostVanPrice > span{
+    font-size: 1rem;
+    color: #4d4d4d;
+}
+
+.hostVanPhoto{
+    padding: 1em;
+}
+
+.hostVanPhoto img{
+    height: 100px;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 600px) {
     .vanDetailHeader img{
         height: 250px;
