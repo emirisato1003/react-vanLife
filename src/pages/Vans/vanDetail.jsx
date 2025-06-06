@@ -6,7 +6,7 @@ export default function VanDetail() {
     const { id } = useParams();
     const location = useLocation();
     const search = location.state?.search || "";
-
+    const filter = location.state?.typeFilter || 'all'
     useEffect(() => {
         (async () => {
             try {
@@ -21,13 +21,14 @@ export default function VanDetail() {
             }
         })();
     }, [id]); // ensure it fetches data whenever the ID changes
+    console.log(location.state.typeFilter);
     return (
         <div className="van-detail-container">
             <Link
                 to={`..${search}`}
                 relative="path"
                 className="back-button"
-            >&larr; <span>Back to all vans</span></Link>
+            >&larr; <span>Back to {filter} vans</span></Link>
             {vanDetail ? (
                 <div className="van-detail">
                     <img src={vanDetail.imageUrl} />
