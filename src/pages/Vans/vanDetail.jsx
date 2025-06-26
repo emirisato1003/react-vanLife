@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
+import { getVans } from "../../api";
 
 export default function VanDetail() {
     const [vanDetail, setVanDetail] = useState(null);
     const { id } = useParams();
     const location = useLocation();
     const search = location.state?.search || "";
-    const filter = location.state?.typeFilter || 'all'
+    const filter = location.state?.typeFilter || 'all';
+    const fetchUrl = `/api/vans/${id}`;
+
     useEffect(() => {
-        (async () => {
-            try {
-                const res = await fetch(`/api/vans/${id}`);
-                if (!res.status) {
-                    throw new Error(res.status);
-                }
-                const { vans } = await res.json();
-                setVanDetail(vans);
-            } catch (err) {
-                console.log(err.message);
-            }
-        })();
+        const loadDetailVans = async () => {
+            const data = await getVans(fetchUrl);
+            setVanDetail(data);
+        };
+        loadDetailVans();
     }, [id]); // ensure it fetches data whenever the ID changes
-    console.log(location.state.typeFilter);
     return (
         <div className="van-detail-container">
             <Link
