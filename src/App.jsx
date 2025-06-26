@@ -16,9 +16,8 @@ import HostVanDetail from './pages/Host/HostVanDetail';
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVanPhoto from './pages/Host/HostVanPhoto';
-
+import NotFound from './pages/NotFound';
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -33,6 +32,7 @@ function App() {
             <Route path='/host' element={<HostLayout />}>
               <Route index element={<Dashboard />} />
               <Route path='income' element={<Income />} />
+              <Route path='reviews' element={<Reviews />} />
               <Route path='/host/vans' element={<HostVans />} />
 
               <Route path='vans/:id' element={<HostVanDetail />}>
@@ -40,9 +40,9 @@ function App() {
                 <Route path='pricing' element={<HostVanPricing />} />
                 <Route path='photo' element={<HostVanPhoto />} />
               </Route>
-
-              <Route path='reviews' element={<Reviews />} />
             </Route>
+
+            <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
