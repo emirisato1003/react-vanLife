@@ -1,6 +1,13 @@
 
-export async function getVans(url) {
+export const getVans = async (url) => {
     const res = await fetch(url);
-    const { vans } = await res.json();
-    return vans;
-}
+    if (!res.ok) {
+        throw {
+            message: "Failed to fetch vans",
+            statusText: res.statusText,
+            status: res.status
+        };
+    }
+    const data = await res.json();
+    return data.vans;
+};

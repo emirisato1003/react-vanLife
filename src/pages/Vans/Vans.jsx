@@ -8,23 +8,32 @@ export default function Vans() {
     const [vans, setVans] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
     const typeFilter = searchParams.get("type");
 
     useEffect(() => {
         const loadVans = async () => {
             setLoading(true);
-            const data = await getVans(baseUrl);
-            setVans(data);
-            setLoading(false);
+            try {
+                const data = await getVans(baseUrl);
+                setVans(data);
+
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
         };
+        
         loadVans();
     }, []);
-
+    
     const displayVans = typeFilter
         ? vans.filter(({ type }) => type === typeFilter)
         : vans;
 
-    const vanElements = displayVans.map(van => (
+    const vanElements = displayVans && displayVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link key={van.id} to={van.id} state={{ search: `?${searchParams.toString()}`, typeFilter }}>
                 <img src={van.imageUrl} alt={van.name} />
@@ -50,6 +59,9 @@ export default function Vans() {
 
     if (loading) {
         return <h1>Loading...</h1>;
+    }
+    if(error){
+        return <h1>There was an error: {error}</h1>
     }
     return (
         <div className="van-list-container">
