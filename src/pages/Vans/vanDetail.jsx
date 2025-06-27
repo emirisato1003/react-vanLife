@@ -30,8 +30,8 @@ export default function VanDetail() {
         loadDetailVans();
     }, [id]); // ensure it fetches data whenever the ID changes
 
-    if(loading) return <h1>Loading...</h1>
-    if(error) return <h1>There is an error: {error}</h1>
+    if(loading) return <h1 aria-live="polite">Loading...</h1>
+    if(error) return <h1 aria-live="assertive">There is an error: {error}</h1>
     return (
         <div className="van-detail-container">
             <Link
