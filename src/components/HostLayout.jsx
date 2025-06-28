@@ -8,7 +8,7 @@ export default function HostLayout() {
         color: '#161616'
     };
     return (
-        <>
+        <div className="host-wrapper">
             <nav className={styles.hostNav}>
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="." end>Dashboard</NavLink>
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="income">Income</NavLink>
@@ -16,6 +16,6 @@ export default function HostLayout() {
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="reviews">Reviews</NavLink>
             </nav>
             < Outlet />
-        </>
+        </div>
     );
 }
