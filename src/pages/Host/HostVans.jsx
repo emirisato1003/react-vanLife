@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react';
 import styles from './HostVans.module.css';
+import { getVans } from '../../api';
 import { Link } from 'react-router-dom';
 
 export default function HostVans() {
     const [hostVans, setHostVans] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(nullS);
     const HostVansFetch = async () => {
+        setLoading(true);
         try {
-            const res = await fetch(`/api/host/vans/`);
-            if (!res.ok) {
-                throw new Error(res.status);
-            }
+            const res = await getVans(`/api/host/vans/`);
             const { vans } = await res.json();
             setHostVans(vans);
         } catch (err) {
-            console.log(err);
+            setError(err);
+        } finally {
+            setLoading(false);
         }
     };
     useEffect(() => {
@@ -21,7 +24,7 @@ export default function HostVans() {
     }, []);
     return (
         <>
-        <h1>Your Listed Vans</h1>
+            <h1>Your Listed Vans</h1>
             {hostVans.map(vans => (
                 <div key={vans.id}>
                     <Link to={vans.id} className={styles.vansList}>
