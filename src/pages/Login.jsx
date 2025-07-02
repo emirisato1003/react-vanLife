@@ -4,16 +4,23 @@ import { loginUser } from '../api';
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = useState({ email: "", password: "" });
+    const [status, setStatus] = useState('idle');
+    const [error, setError] = useState(null);
     const location = useLocation();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const userData = async () => {
+        setStatus('submitting');
+        try {
             const { user } = await loginUser(loginFormData);
             console.log(user);
-        };
-        userData();
-        console.log(loginFormData);
+            setError(null);
+        } catch (err) {
+            setError(err);
+        } finally {
+            setStatus('idle');
+        }
+
     };
 
     const handleChange = (e) => {
@@ -29,6 +36,7 @@ export default function Login() {
         <div className='login-container'>
             {message && <h3>{message}</h3>}
             <h1>Sign in to your account</h1>
+            {error?.message && <h3>{error.message}</h3>}
             <form onSubmit={handleSubmit} className='login-form'>
                 <input
                     type="email"
@@ -44,7 +52,7 @@ export default function Login() {
                     value={loginFormData.password}
                     onChange={handleChange}
                 />
-                <button>Log in</button>
+                <button disabled={status === 'submitting'}>{status === 'submitting' ? 'Logging in...' : 'Login'}</button>
             </form>
         </div>
     );
