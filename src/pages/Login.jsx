@@ -6,16 +6,18 @@ export default function Login() {
     const [loginFormData, setLoginFormData] = useState({ email: "", password: "" });
     const [status, setStatus] = useState('idle');
     const [error, setError] = useState(null);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const location = useLocation();
+    const from = location.state?.from;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('submitting');
         try {
-            const { user } = await loginUser(loginFormData);
-            navigate(`/host`)
+            const data = await loginUser(loginFormData);
             setError(null);
+            localStorage.setItem('loggedin', true);
+            navigate(from, { replace: true });
         } catch (err) {
             setError(err);
         } finally {
