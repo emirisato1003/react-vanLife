@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { loginUser } from '../api';
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = useState({ email: "", password: "" });
     const [status, setStatus] = useState('idle');
     const [error, setError] = useState(null);
+    const navigate = useNavigate()
     const location = useLocation();
 
     const handleSubmit = async (e) => {
@@ -13,7 +14,7 @@ export default function Login() {
         setStatus('submitting');
         try {
             const { user } = await loginUser(loginFormData);
-            console.log(user);
+            navigate(`/host`)
             setError(null);
         } catch (err) {
             setError(err);

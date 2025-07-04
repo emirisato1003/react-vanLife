@@ -25,7 +25,7 @@ body {
 }
 
 .host-wrapper{
-  justify-self: start;
+  margin-left: 2.5em;
 }
 
 .hero{
