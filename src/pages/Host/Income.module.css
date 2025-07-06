@@ -12,6 +12,11 @@
     font-size: 3rem;
 }
 
+.hostIncome img{
+    width: 100%;
+    max-width: 500px;
+}
+
 .top{
     margin-top: 3.8em;
 }

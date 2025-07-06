@@ -1,0 +1,37 @@
+
+.hostReviews img{
+    width: 100%;
+    max-width: 500px;
+}
+.topText{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.topText p{
+    margin-bottom: 0;
+    color: #4d4d4d;
+}
+
+.topText p > span{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.hostReviews h3{
+    margin-top: 2em;
+}
+
+.review .star{
+    color: #FF8C38;
+    margin-top: 1.5em;
+}
+
+.review p.reviewName{
+    font-weight: 600;
+}
+
+p.reviewName > span{
+    color: #8c8c8c;
+}
