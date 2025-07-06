@@ -225,23 +225,19 @@ i[class*='van-type-'] {
 
 /*** van detail page ***/
 .van-detail-container{
-  padding: 27px;
-  /* max-width: 900px; */
+  padding: 0 27px 27px 27px;
   justify-self: center;
-}
-
-.van-detail-container .back-button:visited {
-    
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .van-detail-container .back-button span {
     text-decoration: underline;
 }
 
-.van-detail{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+.van-detail img{
+  width: 100%;
 }
 
 .van-detail i{
@@ -270,8 +266,9 @@ i[class*='van-type-'] {
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
+  margin-bottom: 3em;
 }
-
 
 /***Login page***/
 
@@ -324,10 +321,6 @@ i[class*='van-type-'] {
     padding: 66px 26px;
   }
 
-  .van-detail img{
-  width: auto;
-}
-
   .hero h1{
     font-size:2.25rem;
     margin-bottom: 26px;
@@ -342,10 +335,6 @@ i[class*='van-type-'] {
   .container{
     padding: 150px 0;
     max-width: 560px;
-  }
-
-  .van-detail img{
-  max-width: 700px;
   }
 
   .about-hero-image{
