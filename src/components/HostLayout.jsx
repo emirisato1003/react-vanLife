@@ -28,7 +28,7 @@ export default function HostLayout() {
         HostVansFetch();
     }, []);
     return (
-        <div className="host-wrapper">
+        <div className={styles.hostWrapper}>
             <nav className={styles.hostNav}>
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="." end>Dashboard</NavLink>
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="income">Income</NavLink>

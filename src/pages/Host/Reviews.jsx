@@ -1,4 +1,6 @@
 
 export default function Reviews() {
-    return <h1>Reviews page</h1>;
+    return <section>
+        <h1>Reviews page</h1>
+    </section>;
 }

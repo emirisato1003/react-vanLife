@@ -32,8 +32,8 @@ export default function HostVans() {
         return <h1>There was an error: {error.message}</h1>;
     }
     return (
-        <>
-            <h1>Your Listed Vans</h1>
+        <section>
+            <h1 className={styles.hostVansTitle}>Your Listed Vans</h1>
             {hostVans.map(vans => (
                 <Link key={vans.id} to={vans.id} className={styles.vansList}>
                     <img src={vans.imageUrl} alt={vans.name} />
@@ -43,6 +43,6 @@ export default function HostVans() {
                     </div>
                 </Link>
             ))}
-        </>
+        </section>
     );
 }

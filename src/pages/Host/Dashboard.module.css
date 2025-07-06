@@ -1,0 +1,95 @@
+section a{
+    color: #161616;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hostDashboard{
+    background-color: #FFEAD0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info p{
+    color: #4D4D4D;
+}
+
+.info p > span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.info h2{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+
+section.reviewScore{
+    background-color: #FFDDB2;
+    display: flex;
+    align-items: center;
+    padding-block: 2.8em;
+    margin-top: 0;
+}
+
+.reviewScore h2{
+    margin: 0;
+}
+
+.reviewScore .star{
+    color: #ff8c38;
+    margin-left: 1em;
+    font-size: 1.5rem;
+}
+
+.reviewScore p{
+    margin-left: 5px;
+    font-size: 1.2rem;
+    color: #4D4D4D;
+    margin-right: auto;
+}
+
+section .hostVanSingle{
+    margin-top: 0;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top h2{
+    margin: 0;
+}
+
+.hostVanSingle{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.1em;
+    margin-bottom: 1em;
+    border-radius: 7px;
+}
+
+.hostVanSingle img{
+    height: 65px;
+    width: auto;
+}
+
+.hostVanInfo{
+    margin-right: auto;
+    margin-left: 1em;
+}
+
+.hostVanInfo p{
+    margin: 0;
+    color: #4D4D4D;
+}
+
+.hostVansList section{
+    margin: 1.8em;
+    padding: 0;
+}
