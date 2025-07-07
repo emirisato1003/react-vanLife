@@ -45,7 +45,7 @@ export default function Dashboard() {
                     <Link to='vans'>View all</Link>
                 </div>
                 {
-                    loading && !hostVans ? <h1>Loading...</h1> : <>{renderVanElements(hostVans)}</>
+                    loading || !hostVans ? <h1>Loading...</h1> : <>{renderVanElements(hostVans)}</>
                 }
             </section>
         </>

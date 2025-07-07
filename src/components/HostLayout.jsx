@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from '../components/HostLayout.module.css';
-import { getVans } from "../api";
+import { getHostVans } from "../api";
 import { useState, useEffect } from "react";
 export default function HostLayout() {
     const [hostVans, setHostVans] = useState([]);
@@ -16,7 +16,7 @@ export default function HostLayout() {
     const HostVansFetch = async () => {
         setLoading(true);
         try {
-            const data = await getVans('/api/host/vans');
+            const data = await getHostVans('123');
             setHostVans(data);
         } catch (err) {
             setError(err);
@@ -35,7 +35,7 @@ export default function HostLayout() {
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="vans">Vans</NavLink>
                 <NavLink style={({ isActive }) => isActive ? navStyle : null} to="reviews">Reviews</NavLink>
             </nav>
-            < Outlet context={{hostVans, loading}} />
+            < Outlet context={{hostVans, loading, error}} />
         </div>
     );
 }

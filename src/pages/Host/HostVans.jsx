@@ -1,28 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './HostVans.module.css';
-import { getVans } from '../../api';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
+
 
 export default function HostVans() {
-    const [hostVans, setHostVans] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    const HostVansFetch = async () => {
-        setLoading(true);
-        try {
-            const data = await getVans('/api/host/vans');
-            console.log(data);
-            setHostVans(data);
-        } catch (err) {
-            setError(err);
-        } finally {
-            setLoading(false);
-        }
-    };
-    useEffect(() => {
-        HostVansFetch();
-    }, []);
+    const { hostVans, loading, error } = useOutletContext();
 
     if (loading) {
         return <h1>Loading...</h1>;
